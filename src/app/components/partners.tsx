@@ -1,7 +1,6 @@
 'use client';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, FreeMode } from 'swiper/modules';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -23,27 +22,36 @@ export default function Partners() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h3 className="text-xs md:text-sm font-bold uppercase text-slate-400 tracking-widest">
-            Trusted by 1,000+ Restaurants & Integrated With
+            Trusted by 12,000+ Restaurants & Integrated With
           </h3>
         </div>
+
         <div className="relative">
           <Swiper
-            modules={[Autoplay]}
+            modules={[Autoplay, FreeMode]}
             spaceBetween={40}
             slidesPerView="auto"
             loop={true}
             autoplay={{
-              delay: 3000,
+              delay: 1000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
+              waitForTransition: true,
             }}
-            speed={1500}
+            speed={3000}
+            freeMode={{
+              enabled: true,
+              momentum: false,
+            }}
+            watchSlidesProgress={true}
             breakpoints={{
-              480: { spaceBetween: 50, slidesPerView: 2 },
-              768: { spaceBetween: 60, slidesPerView: 3 },
-              1024: { spaceBetween: 70, slidesPerView: 4 },
+              480: { spaceBetween: 50 },
+              768: { spaceBetween: 60 },
+              1024: { spaceBetween: 70 },
             }}
+            className="!overflow-visible"
           >
+            {/* Duplicate slides for seamless looping */}
             {[...PARTNERS, ...PARTNERS].map((partner, index) => (
               <SwiperSlide key={`${partner.name}-${index}`} className="!w-auto">
                 <div className="relative h-16 md:h-20 w-32 md:w-48 opacity-85 hover:opacity-100 transition-opacity duration-300">
@@ -51,10 +59,9 @@ export default function Partners() {
                     src={partner.logo}
                     alt={`${partner.name} Logo`}
                     fill
-                    className="object-contain"
+                    className="object-contain object-center"
                     sizes="(max-width: 768px) 128px, 192px"
-                    quality={60}
-                    priority={false}
+                    priority={index < 8}
                   />
                 </div>
               </SwiperSlide>
