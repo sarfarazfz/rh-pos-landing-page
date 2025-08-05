@@ -1,16 +1,16 @@
-import FeaturesSection from './components/FeatureSection';
-import Header from './components/layout/Header';
-import HeroSection from './components/HeroSection';
-import OutletTypesSection from './components/OutletTypesSection';
-import ProductShowcase from './components/ProductShowcase';
-import WhyChooseUsSection from './components/WhyChooseUs';
-import Footer from './components/layout/Footer';
 import ContactUsSection from './components/ContactUsSection';
+import FeaturesSection from "./components/FeatureSection";
+import HeroSection from "./components/HeroSection";
+import OutletTypesSection from "./components/OutletTypesSection";
+import ProductShowcase from "./components/ProductShowcase";
+import WhyChooseUsSection from "./components/WhyChooseUs";
+import Footer from "./components/layout/Footer";
+import Partners from "./components/partners";
+import TestimonialSlider from "./components/testimonials";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
         <HeroSection />
         <ProductShowcase
@@ -19,11 +19,12 @@ export default function Home() {
             null
           }
         />
+        <Partners />
         <WhyChooseUsSection />
         <OutletTypesSection />
         <FeaturesSection />
         <ContactUsSection />
-        <Footer />
+        <TestimonialSlider />
       </main>
     </>
   );

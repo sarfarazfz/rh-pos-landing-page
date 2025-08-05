@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.psdstack.com',
         pathname: '/**',
       },
+      {
+        // Add placehold.co to your allowed domains
+        protocol: 'https',
+        hostname: 'placehold.co',
+        pathname: '/**',
+      },
     ],
   },
 };

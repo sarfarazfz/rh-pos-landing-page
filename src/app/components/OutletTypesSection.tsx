@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const outletTypes = [
-  'Quick Service (QSR)',
-  'Fine Dining',
-  'Cafes & Bakeries',
-  'Food Trucks',
-  'Bars & Pubs',
+  "Quick Service (QSR)",
+  "Fine Dining",
+  "Cafes & Bakeries",
+  "Food Trucks",
+  "Bars & Pubs",
 ];
 
 const OutletTypesSection = () => {
   return (
-    <section className="bg-slate-50 py-20 lg:py-24">
+    <section id="outlet-types" className="bg-slate-50 py-20 lg:py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-800">
