@@ -1,35 +1,35 @@
-"use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import Image from "next/image";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+'use client';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const TESTIMONIALS = [
   {
     id: 1,
     quote:
-      "Switching to RH POS was a game-changer. Our service is faster, our inventory is under control, and our customers love the loyalty program. Sales are up 15%!",
-    name: "Maria Garcia",
-    role: "Owner, The Corner Cafe",
-    avatar: "https://placehold.co/100x100/14b8a6/FFFFFF?text=MG",
+      'Switching to RH POS was a game-changer. Our service is faster, our inventory is under control, and our customers love the loyalty program. Sales are up 15%!',
+    name: 'Maria Garcia',
+    role: 'Owner, The Corner Cafe',
+    avatar: 'https://placehold.co/100x100/14b8a6/FFFFFF?text=MG',
   },
   {
     id: 2,
     quote:
-      "The analytics are incredibly powerful. I can see my top-selling items and busiest hours at a glance, which helps me make smarter staffing and purchasing decisions.",
-    name: "David Chen",
-    role: "Manager, Urban Eats",
-    avatar: "https://placehold.co/100x100/0d9488/FFFFFF?text=DC",
+      'The analytics are incredibly powerful. I can see my top-selling items and busiest hours at a glance, which helps me make smarter staffing and purchasing decisions.',
+    name: 'David Chen',
+    role: 'Manager, Urban Eats',
+    avatar: 'https://placehold.co/100x100/0d9488/FFFFFF?text=DC',
   },
   {
     id: 3,
     quote:
-      "The 24/7 support is fantastic. Any time I have a question, the RH POS team is there to help immediately. It gives me great peace of mind.",
-    name: "John Smith",
-    role: "Founder, The Burger Joint",
-    avatar: "https://placehold.co/100x100/2dd4bf/FFFFFF?text=JS",
+      'The 24/7 support is fantastic. Any time I have a question, the RH POS team is there to help immediately. It gives me great peace of mind.',
+    name: 'John Smith',
+    role: 'Founder, The Burger Joint',
+    avatar: 'https://placehold.co/100x100/2dd4bf/FFFFFF?text=JS',
   },
 ];
 
@@ -39,7 +39,7 @@ export default function TestimonialSlider() {
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800">
-            Don't Just Take Our Word For It
+            Do not Just Take Our Word For It
           </h2>
         </div>
 
@@ -57,8 +57,8 @@ export default function TestimonialSlider() {
               clickable: true,
             }}
             navigation={{
-              nextEl: ".testimonial-button-next",
-              prevEl: ".testimonial-button-prev",
+              nextEl: '.testimonial-button-next',
+              prevEl: '.testimonial-button-prev',
             }}
             breakpoints={{
               640: {
@@ -74,7 +74,7 @@ export default function TestimonialSlider() {
                 <div className="pt-2 pb-12">
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 sm:p-8 max-w-2xl mx-auto hover:-translate-y-1">
                     <p className="text-slate-600 mb-4 sm:mb-6 text-center text-sm sm:text-base">
-                      "{testimonial.quote}"
+                      {testimonial.quote}
                     </p>
                     <div className="flex items-center justify-center">
                       <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4 overflow-hidden">
