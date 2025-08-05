@@ -1,3 +1,4 @@
+import ContactUsSection from './components/ContactUsSection';
 import FeaturesSection from "./components/FeatureSection";
 import HeroSection from "./components/HeroSection";
 import OutletTypesSection from "./components/OutletTypesSection";
@@ -22,6 +23,7 @@ export default function Home() {
         <WhyChooseUsSection />
         <OutletTypesSection />
         <FeaturesSection />
+        <ContactUsSection />
         <TestimonialSlider />
       </main>
     </>
