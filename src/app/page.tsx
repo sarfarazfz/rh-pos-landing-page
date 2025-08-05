@@ -1,6 +1,14 @@
 import Image from "next/image";
-import Header from "./components/header";
+import Partners from "./components/partners";
+import Testimonial from "./components/testimonials";
 
 export default function Home() {
-  return <Header />;
+  return (
+    <>
+      <main>
+        <Partners />
+        <Testimonial />
+      </main>
+    </>
+  );
 }

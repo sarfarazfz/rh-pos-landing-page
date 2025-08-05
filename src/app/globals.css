@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f1f5f9;
   --foreground: #171717;
 }
 
@@ -9,14 +9,61 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
-
 
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #334155;
+}
+
+/* Testimonial Slider */
+.testimonial-slider .material-card {
+  background-color: white;
+    border-radius: 1rem;
+    /* 16px */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+}
+
+.testimonial-slider .material-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Pagination Bullets */
+.testimonial-slider .swiper-pagination-bullet {
+  background: #cbd5e1;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active {
+  background: #0d9488;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Navigation Buttons */
+.testimonial-slider .testimonial-button-next,
+.testimonial-slider .testimonial-button-prev {
+  transition: all 0.2s ease ;
+}
+
+.testimonial-slider .testimonial-button-next:hover,
+.testimonial-slider .testimonial-button-prev:hover {
+  background-color: #0d9488;
+  transform: scale(1.2);
+}
+
+.testimonial-slider .testimonial-button-next:hover svg,
+.testimonial-slider .testimonial-button-prev:hover svg {
+  color: white;
 }
