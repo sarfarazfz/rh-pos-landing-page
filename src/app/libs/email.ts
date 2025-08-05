@@ -36,8 +36,12 @@ export async function sendContactEmail({
       <p>${message.replace(/\n/g, '<br>')}</p>
     `,
     });
-  } catch (error: any) {
-    console.log(error.message);
-    throw new Error(error.message || 'something went wrong sending email');
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.log(error.message);
+      throw new Error(error.message || 'something went wrong sending email');
+    } else {
+      console.log('Unknown error', error);
+    }
   }
 }
