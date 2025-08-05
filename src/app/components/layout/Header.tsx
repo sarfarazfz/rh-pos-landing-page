@@ -37,7 +37,7 @@ export default function Header() {
         {/* Contact Button on the right - Hidden on mobile */}
         <div className="hidden md:block">
           <a
-            href="#"
+            href="#contact"
             className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2.5 px-5 rounded-lg shadow-md hover:shadow-lg transition-all"
           >
             Contact Us
