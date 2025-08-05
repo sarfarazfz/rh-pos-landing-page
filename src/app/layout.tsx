@@ -10,15 +10,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RH POS - Best Point of Sale (POS) System in Dubai & UAE",
+  title: "RH POS | Best Restaurant & Retail POS System in Dubai, UAE & KSA",
   description:
-    "RH POS offers the best Point of Sale systems in Dubai and across the UAE. Our solutions are tailored for restaurants, cafes, and retail, featuring fast service, inventory management, and powerful analytics. Get a free demo today!",
+    "RH POS offers the best Point of Sale systems in Dubai, across the UAE, and in Saudi Arabia (KSA). Our robust solutions are tailored for restaurants, cafes, and retail, featuring fast service, advanced inventory management, powerful analytics, and seamless integration. Get a free demo and transform your business today!",
   keywords:
-    "POS system Dubai, point of sale UAE, restaurant POS Dubai, cafe POS system, retail POS, inventory management software Dubai, RH POS",
+    "POS system Dubai, point of sale UAE, restaurant POS Dubai, cafe POS system, retail POS, inventory management software Dubai, RH POS, POS system Saudi Arabia, point of sale KSA, restaurant POS KSA, cloud POS Dubai, POS solutions MENA, business management software UAE",
   openGraph: {
-    title: "RH POS - Best Point of Sale (POS) System in Dubai & UAE",
+    title:
+      "RH POS | The Leading POS System for Restaurants & Retail in the UAE & KSA",
     description:
-      "RH POS offers the best Point of Sale systems in Dubai and across the UAE. Our solutions are tailored for restaurants, cafes, and retail, featuring fast service, inventory management, and powerful analytics. Get a free demo today!",
+      "RH POS delivers a powerful, cloud-based Point of Sale system with features like inventory management, real-time analytics, and secure payment processing. Perfect for businesses in Dubai, Abu Dhabi, and across Saudi Arabia. Get your free demo now!",
     url: "https://yourwebsite.com",
     siteName: "RH POS",
     images: [
@@ -34,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RH POS - Best Point of Sale (POS) System in Dubai & UAE",
+    title: "RH POS: The Ultimate POS System for UAE & Saudi Arabia",
     description:
-      "RH POS offers the best Point of Sale systems in Dubai and across the UAE. Our solutions are tailored for restaurants, cafes, and retail, featuring fast service, inventory management, and powerful analytics. Get a free demo today!",
+      "Upgrade your business with RH POS. Fast, reliable, and secure point of sale solutions for restaurants and retail shops in Dubai, Abu Dhabi, and Saudi Arabia.",
     creator: "@yourtwitterhandle",
     images: ["https://yourwebsite.com/twitter-image.jpg"],
   },
