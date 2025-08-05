@@ -27,7 +27,7 @@ const ContactUsSection = () => {
       name: formData.get('name'),
       email: formData.get('email'),
       message: formData.get('message'),
-      phone: formData.get('phone'),
+      phoneNo: formData.get('phoneNo'),
     };
 
     try {
@@ -126,8 +126,8 @@ const ContactUsSection = () => {
               </label>
               <input
                 type="text"
-                id="phone"
-                name="phone"
+                id="phoneNo"
+                name="phoneNo"
                 required
                 className={`mt-1 block w-full px-4 py-3 bg-slate-50 border rounded-lg shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 ${
                   errors.phone ? 'border-red-500' : 'border-slate-300'

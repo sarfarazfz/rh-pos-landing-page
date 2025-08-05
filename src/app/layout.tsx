@@ -20,11 +20,11 @@ export const metadata: Metadata = {
       "RH POS | The Leading POS System for Restaurants & Retail in the UAE & KSA",
     description:
       "RH POS delivers a powerful, cloud-based Point of Sale system with features like inventory management, real-time analytics, and secure payment processing. Perfect for businesses in Dubai, Abu Dhabi, and across Saudi Arabia. Get your free demo now!",
-    url: "https://yourwebsite.com",
+    url: "https://rhposs.com",
     siteName: "RH POS",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: "https://rhposs.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "RH POS System for Restaurants and Retail in Dubai",
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     description:
       "Upgrade your business with RH POS. Fast, reliable, and secure point of sale solutions for restaurants and retail shops in Dubai, Abu Dhabi, and Saudi Arabia.",
     creator: "@yourtwitterhandle",
-    images: ["https://yourwebsite.com/twitter-image.jpg"],
+    images: ["https://rh-poss.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://yourwebsite.com",
+    canonical: "https://rh-poss.com",
   },
   icons: {
     icon: [
-      { url: "/final updated.svg", type: "image/svg+xml" },
-      { url: "/final updated.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/og-image.svg", type: "image/svg+xml" },
+      { url: "/og-icon.ico", sizes: "32x32", type: "image/x-icon" },
     ],
-    apple: "/final updated.png",
+    apple: "/og-image.png",
   },
 };
 
