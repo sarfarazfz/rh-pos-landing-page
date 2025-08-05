@@ -4,7 +4,7 @@ export default function Header() {
     <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-3xl font-bold text-slate-800">
-          <a href="#home">
+          <a href="/">
             RH<span className="text-teal-600">POS</span>
           </a>
         </div>

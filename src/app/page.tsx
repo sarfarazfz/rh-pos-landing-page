@@ -5,6 +5,7 @@ import OutletTypesSection from './components/OutletTypesSection';
 import ProductShowcase from './components/ProductShowcase';
 import WhyChooseUsSection from './components/WhyChooseUs';
 import Footer from './components/layout/Footer';
+import ContactUsSection from './components/ContactUsSection';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <WhyChooseUsSection />
         <OutletTypesSection />
         <FeaturesSection />
+        <ContactUsSection />
         <Footer />
       </main>
     </>
