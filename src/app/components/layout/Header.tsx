@@ -38,7 +38,7 @@ export default function Header() {
         <div className="hidden md:block">
           <a
             href="#"
-            className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105"
+            className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2.5 px-5 rounded-lg shadow-md hover:shadow-lg transition-all"
           >
             Contact Us
           </a>

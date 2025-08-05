@@ -1,10 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #f1f5f9;
   --foreground: #171717;
 }
-
 
 @theme inline {
   --color-background: var(--background);
@@ -50,20 +49,9 @@ body {
   width: 30px;
   border-radius: 5px;
 }
+ 
+.swiper-pagination-bullet-active {
 
-/* Navigation Buttons */
-.testimonial-slider .testimonial-button-next,
-.testimonial-slider .testimonial-button-prev {
-  transition: all 0.2s ease ;
-}
+  @apply !bg-teal-600 !w-8 !rounded-md;
 
-.testimonial-slider .testimonial-button-next:hover,
-.testimonial-slider .testimonial-button-prev:hover {
-  background-color: #0d9488;
-  transform: scale(1.2);
-}
-
-.testimonial-slider .testimonial-button-next:hover svg,
-.testimonial-slider .testimonial-button-prev:hover svg {
-  color: white;
 }

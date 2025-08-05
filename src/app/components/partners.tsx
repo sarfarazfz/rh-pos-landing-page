@@ -18,7 +18,7 @@ const PARTNERS = [
 
 export default function Partners() {
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h3 className="text-xs md:text-sm font-bold uppercase text-slate-400 tracking-widest">
@@ -26,37 +26,44 @@ export default function Partners() {
           </h3>
         </div>
 
-        <div className="relative px-8">
+        <div className="relative">
           <Swiper
             modules={[Autoplay]}
-            spaceBetween={24} // Slightly more space for larger images
+            spaceBetween={40}
             slidesPerView="auto"
-            centeredSlides={false}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
             loop={true}
-            speed={5000}
-            freeMode={true}
+            autoplay={{
+              delay: 1,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+              waitForTransition: true,
+            }}
+            speed={3000}
+            freeMode={{
+              enabled: true,
+              momentum: false,
+            }}
+            grabCursor={false}
             watchSlidesProgress={true}
             breakpoints={{
-              480: { spaceBetween: 28 },
-              768: { spaceBetween: 32 },
-              1024: { spaceBetween: 36 },
+              480: { spaceBetween: 50 },
+              768: { spaceBetween: 60 },
+              1024: { spaceBetween: 70 },
             }}
             className="!overflow-visible"
           >
-            {PARTNERS.map((partner, index) => (
+            {/* Duplicate slides for seamless looping */}
+            {[...PARTNERS, ...PARTNERS].map((partner, index) => (
               <SwiperSlide key={`${partner.name}-${index}`} className="!w-auto">
-                <div className="relative h-20 w-48 opacity-90 hover:opacity-100 transition-opacity duration-300">
+                <div className="relative h-16 md:h-20 w-32 md:w-48 opacity-85 hover:opacity-100 transition-opacity duration-300">
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} Logo`}
                     fill
                     className="object-contain object-center"
-                    sizes="(max-width: 768px) 192px, 240px"
+                    sizes="(max-width: 768px) 128px, 192px"
                     quality={100}
+                    priority={index < 8} // Only prioritize first set of images
                   />
                 </div>
               </SwiperSlide>
