@@ -83,7 +83,7 @@ export default function Header() {
                 Why RH POS
               </a>
               <a
-                href="#"
+                href="#contact"
                 className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-5 rounded-lg text-center shadow-md hover:shadow-lg transition-all"
                 onClick={closeMenu}
               >
