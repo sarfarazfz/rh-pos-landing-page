@@ -1,13 +1,12 @@
-"use client";
-//frontend-react meta cousera
-import Link from "next/link";
-import { useEffect } from "react";
+'use-client';
 export default function Header() {
   return (
     <header className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-3xl font-bold text-slate-800">
-          RH<span className="text-teal-600">POS</span>
+          <a href="#home">
+            RH<span className="text-teal-600">POS</span>
+          </a>
         </div>
         <div className="hidden md:flex items-center space-x-8 font-medium">
           <a href="#features" className="hover:text-teal-600 transition-colors">
