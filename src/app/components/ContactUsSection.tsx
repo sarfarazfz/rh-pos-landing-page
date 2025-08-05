@@ -66,9 +66,16 @@ const ContactUsSection = () => {
           setGeneralErrorMessage(errorMessage);
         }
       }
-    } catch (error) {
-      setStatus('error');
-      setGeneralErrorMessage('An unexpected error occurred. Please try again.');
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(error.message);
+        setStatus('error');
+        setGeneralErrorMessage(
+          'An unexpected error occurred. Please try again.'
+        );
+      } else {
+        console.log(error);
+      }
     }
   };
 
@@ -80,7 +87,8 @@ const ContactUsSection = () => {
             Get in Touch
           </h2>
           <p className="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">
-            Have a question or want to see a demo? We'd love to hear from you.
+            Have a question or want to see a demo? We would love to hear from
+            you.
           </p>
         </div>
 
