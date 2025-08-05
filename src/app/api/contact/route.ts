@@ -42,7 +42,7 @@ function validateFormData(
     throw new Error('Name must be at least 2 characters long.');
   }
   if (phoneNo.trim().length < 10) {
-    throw new Error('Name must be at least 2 characters long.');
+      throw new Error('Phone number should be valid.');
   }
 
   if (message.trim().length < 10) {
