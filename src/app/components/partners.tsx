@@ -1,5 +1,8 @@
+'use client';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
@@ -44,10 +47,14 @@ export default function Partners() {
             {[...PARTNERS, ...PARTNERS].map((partner, index) => (
               <SwiperSlide key={`${partner.name}-${index}`} className="!w-auto">
                 <div className="relative h-16 md:h-20 w-32 md:w-48 opacity-85 hover:opacity-100 transition-opacity duration-300">
-                  <img
+                  <Image
                     src={partner.logo}
                     alt={`${partner.name} Logo`}
-                    className="h-full w-full object-contain"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 128px, 192px"
+                    quality={60}
+                    priority={false}
                   />
                 </div>
               </SwiperSlide>
