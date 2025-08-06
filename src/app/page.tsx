@@ -4,8 +4,8 @@ import HeroSection from "./components/HeroSection";
 import OutletTypesSection from "./components/OutletTypesSection";
 import ProductShowcase from "./components/ProductShowcase";
 import WhyChooseUsSection from "./components/WhyChooseUs";
-import Partners from "./components/partners";
-import TestimonialSlider from "./components/testimonials";
+import Partners from "./components/Partners";
+import TestimonialSlider from "./components/Testimonials";
 import FAQSection from "./components/FAQSection";
 import PricingSection from "./components/PricingSection";
 
@@ -24,10 +24,10 @@ export default function Home() {
         <WhyChooseUsSection />
         <OutletTypesSection />
         <FeaturesSection />
+        <PricingSection />
         <ContactUsSection />
         <TestimonialSlider />
         <FAQSection />
-        <PricingSection />
       </main>
     </>
   );

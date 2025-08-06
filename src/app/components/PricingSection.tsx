@@ -5,8 +5,8 @@ import { Check } from "lucide-react";
 const pricingPlans = [
   {
     name: "Basic",
-    price: "AED 99",
-    frequency: "per month",
+    price: "AED 1500",
+    frequency: "per year /per outlet",
     features: [
       "Essential POS features",
       "Basic inventory tracking",
@@ -15,12 +15,11 @@ const pricingPlans = [
       "Single location support",
     ],
     isPopular: false,
-    buttonText: "Get Started",
   },
   {
     name: "Pro",
-    price: "AED 199",
-    frequency: "per month",
+    price: "AED 2000",
+    frequency: "per year /per outlet",
     features: [
       "All Basic features",
       "Advanced inventory management",
@@ -29,8 +28,7 @@ const pricingPlans = [
       "24/7 priority support",
       "Multi-location support",
     ],
-    isPopular: true, // Highlight this plan
-    buttonText: "Start Free Trial",
+    isPopular: true,
   },
   {
     name: "Enterprise",
@@ -77,7 +75,7 @@ export default function PricingSection() {
                 transition-all duration-300 hover:shadow-xl hover:-translate-y-2
                 ${
                   plan.isPopular
-                    ? "border-4 border-teal-500 transform scale-105"
+                    ? "border-4 border-teal-700 transform scale-105"
                     : "border border-gray-200"
                 }
               `}
@@ -85,7 +83,7 @@ export default function PricingSection() {
               <div>
                 {/* Popular Badge */}
                 {plan.isPopular && (
-                  <div className="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
+                  <div className="absolute top-0 right-0 bg-teal-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
                     Most Popular
                   </div>
                 )}
@@ -121,20 +119,21 @@ export default function PricingSection() {
                 </ul>
               </div>
 
-              {/* Call to Action Button */}
-              <button
-                className={`
-                  w-full py-3 rounded-lg font-semibold text-white transition-colors duration-300 shadow-md
-                  ${
-                    plan.isPopular
-                      ? "bg-teal-600 hover:bg-teal-700"
-                      : "bg-gray-700 hover:bg-gray-800"
-                  }
-                  transform hover:scale-105
-                `}
-              >
-                {plan.buttonText}
-              </button>
+              {plan.name === "Enterprise" && (
+                <button
+                  className={`
+                    w-full py-3 rounded-lg font-semibold text-white transition-colors duration-300 shadow-md
+                    ${
+                      plan.isPopular
+                        ? "bg-teal-600 hover:bg-teal-700"
+                        : "bg-gray-700 hover:bg-gray-800"
+                    }
+                    transform hover:scale-105
+                  `}
+                >
+                  {plan.buttonText}
+                </button>
+              )}
             </div>
           ))}
         </div>
