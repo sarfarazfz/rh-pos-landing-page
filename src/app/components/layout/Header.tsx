@@ -32,6 +32,12 @@ export default function Header() {
           >
             Why RH POS
           </a>
+          <a href="#faq" className="hover:text-teal-600 transition-colors">
+            FAQs
+          </a>
+          <a href="#pricing" className="hover:text-teal-600 transition-colors">
+            Pricing
+          </a>
         </div>
 
         {/* Contact Button on the right - Hidden on mobile */}
@@ -81,6 +87,15 @@ export default function Header() {
                 onClick={closeMenu}
               >
                 Why RH POS
+              </a>
+              <a href="#faq" className="hover:text-teal-600 transition-colors">
+                FAQs
+              </a>
+              <a
+                href="#pricing"
+                className="hover:text-teal-600 transition-colors"
+              >
+                Pricing
               </a>
               <a
                 href="#contact"
