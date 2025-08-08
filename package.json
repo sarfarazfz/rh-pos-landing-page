@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@getbrevo/brevo": "^3.0.1",
+    "@radix-ui/react-dialog": "^1.1.14",
     "@types/nodemailer": "^6.4.17",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.536.0",
@@ -17,7 +19,10 @@
     "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "swiper": "^11.2.10"
+    "react-hook-form": "^7.62.0",
+    "react-remove-scroll": "^2.7.1",
+    "swiper": "^11.2.10",
+    "zod": "^4.0.15"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

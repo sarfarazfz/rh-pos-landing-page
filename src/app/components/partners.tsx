@@ -18,7 +18,7 @@ const PARTNERS = [
 
 export default function Partners() {
   return (
-    <section className="py-12 md:py-16 overflow-hidden">
+    <section id="partners" className="py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h3 className="text-xs md:text-sm font-bold uppercase text-slate-400 tracking-widest">

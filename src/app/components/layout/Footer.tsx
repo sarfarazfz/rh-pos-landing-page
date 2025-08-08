@@ -15,6 +15,7 @@ const Footer = () => {
         >
           Get Your Free Demo
         </a>
+        {/* Contact Button */}
         <div className="mt-8 sm:mt-12 text-sm sm:text-base text-slate-400">
           &copy; 2025 RH POS. All rights reserved.
         </div>
