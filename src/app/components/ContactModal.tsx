@@ -226,7 +226,7 @@ const ContactModal: React.FC = () => {
                   Message Sent!
                 </h3>
                 <p className="text-teal-700 text-xs mt-1">
-                  We'll get back to you soon.
+                  We will get back to you soon.
                 </p>
               </div>
             </div>

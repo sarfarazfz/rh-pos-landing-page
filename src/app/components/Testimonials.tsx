@@ -67,8 +67,7 @@ export default function TestimonialSlider() {
               1024: {
                 spaceBetween: 40,
               },
-            }}
-          >
+            }}>
             {TESTIMONIALS.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
                 <div className="pt-2 pb-12">
@@ -105,14 +104,12 @@ export default function TestimonialSlider() {
           {/* Navigation Buttons */}
           <button
             className="testimonial-button-prev hidden sm:flex absolute top-1/2 -translate-y-1/2 left-0 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-md items-center justify-center hover:bg-teal-600 hover:scale-110 transition-all duration-200"
-            aria-label="Previous testimonial"
-          >
+            aria-label="Previous testimonial">
             <svg
               className="w-4 h-4 md:w-5 md:h-5 text-teal-600 hover:text-white transition-colors"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+              viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -123,14 +120,12 @@ export default function TestimonialSlider() {
           </button>
           <button
             className="testimonial-button-next hidden sm:flex absolute top-1/2 -translate-y-1/2 right-0 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-md items-center justify-center hover:bg-teal-600 hover:scale-110 transition-all duration-200"
-            aria-label="Next testimonial"
-          >
+            aria-label="Next testimonial">
             <svg
               className="w-4 h-4 md:w-5 md:h-5 text-teal-600 hover:text-white transition-colors"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+              viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
