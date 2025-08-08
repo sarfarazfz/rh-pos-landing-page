@@ -1,19 +1,19 @@
-'use client';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, FreeMode } from 'swiper/modules';
-import Image from 'next/image';
-import 'swiper/css';
-import 'swiper/css/autoplay';
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 const PARTNERS = [
-  { name: 'Swiggy', logo: '/partners/swiggy.jpg' },
-  { name: 'Zomato', logo: '/partners/zomato.jpg' },
-  { name: 'Foodpanda', logo: '/partners/foodpanda.jpeg' },
-  { name: 'Noon', logo: '/partners/noon.png' },
-  { name: 'Careem', logo: '/partners/careem.jpg' },
-  { name: 'Talabat', logo: '/partners/talabat.jpg' },
-  { name: 'Smiles', logo: '/partners/smiles.png' },
-  { name: 'Deliveroo', logo: '/partners/deliveroo.jpg' },
+  { name: "Swiggy", logo: "/partners/swiggy.jpg" },
+  { name: "Zomato", logo: "/partners/zomato.jpg" },
+  { name: "Foodpanda", logo: "/partners/foodpanda.jpeg" },
+  { name: "Noon", logo: "/partners/noon.png" },
+  { name: "Careem", logo: "/partners/careem.jpg" },
+  { name: "Talabat", logo: "/partners/talabat.jpg" },
+  { name: "Smiles", logo: "/partners/smiles.png" },
+  { name: "Deliveroo", logo: "/partners/deliveroo.jpg" },
 ];
 
 export default function Partners() {
