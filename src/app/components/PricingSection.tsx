@@ -61,7 +61,7 @@ export default function PricingSection() {
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Choose the perfect RH POS plan that scales with your needs, whether
-            you're a small cafe or a multi-location retail chain.
+            you&apos;re a small cafe or a multi-location retail chain.
           </p>
         </div>
 
