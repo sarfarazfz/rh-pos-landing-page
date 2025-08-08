@@ -13,12 +13,10 @@ export const useContactTrigger = ({
   const scrollListenerRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
-    // Check if form has been previously submitted
     const isFormSubmitted =
       localStorage.getItem('contactFormSubmitted') === 'true';
 
     if (isFormSubmitted) {
-      // If form was already submitted, don't set up any triggers
       return;
     }
 
@@ -29,13 +27,11 @@ export const useContactTrigger = ({
       const scrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercentage = (scrollTop / scrollHeight) * 100;
-
-      if (scrollPercentage >= 70 && !isModalOpen) {
+      if (scrollPercentage >= 99.5 && !isModalOpen) {
         openModal();
       }
     };
 
-    // Timeout trigger - opens modal every 15 seconds if not already open
     const setTimeoutTrigger = () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);

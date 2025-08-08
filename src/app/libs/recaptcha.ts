@@ -15,7 +15,12 @@ export async function verifyRecaptcha(
   score?: number;
   error?: string;
 }> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY_DEVELOPMENT;
+  // const secretKey = process.env.RECAPTCHA_SECRET_KEY_DEVELOPMENT;
+  const secretKey =
+    process.env.NODE_ENV === 'development'
+      ? process.env.RECAPTCHA_SECRET_KEY_DEVELOPMENT
+      : process.env.RECAPTCHA_SECRET_KEY;
+
   if (!secretKey) {
     console.error('RECAPTCHA_SECRET_KEY environment variable is not set');
     return {
@@ -96,7 +101,10 @@ export async function verifyRecaptcha(
 }
 
 export function getRecaptchaSiteKey(): string {
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_DEVELOPMENT;
+  const siteKey =
+    process.env.NODE_ENV === 'development'
+      ? process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_DEVELOPMENT
+      : process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   if (!siteKey) {
     console.warn(
