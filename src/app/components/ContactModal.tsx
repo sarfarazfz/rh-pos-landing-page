@@ -178,19 +178,17 @@ const ContactModal: React.FC = () => {
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] p-1 sm:p-4"
+      className="fixed inset-0 bg-black/60 flex items-center justify-center z-[9999] p-2 sm:p-4 backdrop-blur-sm"
       onClick={handleBackdropClick}>
       <div
-        className="bg-white rounded-lg shadow-2xl w-full max-w-full sm:max-w-md max-h-[98vh] sm:max-h-[85vh] overflow-y-auto relative mx-1 sm:mx-0"
+        className="bg-white rounded-lg shadow-2xl w-full max-w-md max-h-[95vh] sm:max-h-[90vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}>
         {/* Header */}
-        <div className="flex items-center justify-between p-3 sm:p-6 border-b border-teal-100 bg-gradient-to-r from-teal-50 to-teal-100">
-          <h2 className="text-lg sm:text-2xl font-bold text-teal-800">
-            Contact Us
-          </h2>
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
+          <h2 className="text-lg font-bold text-gray-800">Contact Us</h2>
           <button
             onClick={closeModal}
-            className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-white/50"
+            className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-200/50"
             aria-label="Close modal">
             <svg
               className="w-6 h-6"
@@ -209,28 +207,26 @@ const ContactModal: React.FC = () => {
 
         {/* Success Message */}
         {showSuccess && (
-          <div className="mx-3 sm:mx-6 mt-3 sm:mt-4 p-2 sm:p-4 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 rounded-lg">
-            <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="mx-4 mt-4 p-3 bg-teal-50 border border-teal-200 rounded-lg">
+            <div className="flex items-center space-x-3">
               <div className="flex-shrink-0">
                 <svg
-                  className="h-6 w-6 text-teal-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
+                  className="h-5 w-5 text-teal-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
                   />
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-teal-800 font-semibold text-sm">
-                  Message Sent Successfully!
+                <h3 className="text-teal-800 font-medium text-sm">
+                  Message Sent!
                 </h3>
-                <p className="text-teal-700 text-sm mt-1">
-                  Thank you for your message! We will get back to you soon.
+                <p className="text-teal-700 text-xs mt-1">
+                  We will get back to you soon.
                 </p>
               </div>
             </div>
@@ -239,40 +235,36 @@ const ContactModal: React.FC = () => {
 
         {/* Error Message */}
         {showError && (
-          <div className="mx-3 sm:mx-6 mt-3 sm:mt-4 p-2 sm:p-4 bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 rounded-lg">
-            <div className="flex items-center space-x-2 sm:space-x-3">
-              <div className="flex-shrink-0">
+          <div className="mx-4 mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+            <div className="flex items-start space-x-3">
+              <div className="flex-shrink-0 pt-0.5">
                 <svg
-                  className="h-6 w-6 text-red-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
+                  className="h-5 w-5 text-red-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clipRule="evenodd"
                   />
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-red-800 font-semibold text-sm">
-                  Oops! Something went wrong
+                <h3 className="text-red-800 font-medium text-sm">
+                  Submission Error
                 </h3>
-                <p className="text-red-700 text-sm mt-1">{errorMessage}</p>
+                <p className="text-red-700 text-xs mt-1">{errorMessage}</p>
               </div>
             </div>
           </div>
         )}
-        {/* Form */}
 
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="p-3 sm:p-6 space-y-3 sm:space-y-4">
+        {/* Form */}
+        <form onSubmit={handleSubmit(onSubmit)} className="p-4 space-y-3">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1">
+              className="block text-xs font-medium text-gray-600 mb-1">
               Name *
             </label>
             <input
@@ -285,109 +277,93 @@ const ContactModal: React.FC = () => {
                   message: 'Name must be at least 2 characters',
                 },
               })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
+              className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
                 errors.name ? 'border-red-500' : ''
               }`}
-              placeholder="Enter your full name"
+              placeholder="Your full name"
             />
             {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+              <p className="mt-1 text-xs text-red-600">{errors.name.message}</p>
             )}
           </div>
 
-          {/* restaurant name fields */}
           <div>
             <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1">
+              htmlFor="restaurantName"
+              className="block text-xs font-medium text-gray-600 mb-1">
               Restaurant *
             </label>
             <input
               type="text"
-              id="name"
+              id="restaurantName"
               {...register('restaurantName', {
-                required: 'restaurant is required',
-                minLength: {
-                  value: 2,
-                  message: 'Restaurant name must be at least 2 characters',
-                },
+                required: 'Restaurant name is required',
               })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
+              className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
                 errors.restaurantName ? 'border-red-500' : ''
               }`}
-              placeholder="Enter your full name"
+              placeholder="Your restaurant's name"
             />
             {errors.restaurantName && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-xs text-red-600">
                 {errors.restaurantName.message}
               </p>
             )}
           </div>
 
-          {/* restaurant city */}
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1">
-              Restaurant City *
-            </label>
-            <input
-              type="text"
-              id="name"
-              {...register('restaurantCity', {
-                required: 'restaurantCity is required',
-                minLength: {
-                  value: 2,
-                  message: 'Restaurant City must be at least 2 characters',
-                },
-              })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
-                errors.restaurantCity ? 'border-red-500' : ''
-              }`}
-              placeholder="Enter your full name"
-            />
-            {errors.restaurantCity && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.restaurantCity.message}
-              </p>
-            )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label
+                htmlFor="restaurantCity"
+                className="block text-xs font-medium text-gray-600 mb-1">
+                City *
+              </label>
+              <input
+                type="text"
+                id="restaurantCity"
+                {...register('restaurantCity', {
+                  required: 'City is required',
+                })}
+                className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
+                  errors.restaurantCity ? 'border-red-500' : ''
+                }`}
+                placeholder="e.g., New York"
+              />
+              {errors.restaurantCity && (
+                <p className="mt-1 text-xs text-red-600">
+                  {errors.restaurantCity.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="restaurantCountry"
+                className="block text-xs font-medium text-gray-600 mb-1">
+                Country *
+              </label>
+              <input
+                type="text"
+                id="restaurantCountry"
+                {...register('restaurantCountry', {
+                  required: 'Country is required',
+                })}
+                className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
+                  errors.restaurantCountry ? 'border-red-500' : ''
+                }`}
+                placeholder="e.g., USA"
+              />
+              {errors.restaurantCountry && (
+                <p className="mt-1 text-xs text-red-600">
+                  {errors.restaurantCountry.message}
+                </p>
+              )}
+            </div>
           </div>
 
-          {/* Restaurant country */}
-
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1">
-              Restaurant Country *
-            </label>
-            <input
-              type="text"
-              id="name"
-              {...register('restaurantCountry', {
-                required: 'restaurantCountry is required',
-                minLength: {
-                  value: 2,
-                  message: 'Restaurant Country must be at least 2 characters',
-                },
-              })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
-                errors.restaurantCountry ? 'border-red-500' : ''
-              }`}
-              placeholder="Enter your full name"
-            />
-            {errors.restaurantCountry && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.restaurantCountry.message}
-              </p>
-            )}
-          </div>
-
-          {/* Phone Number Field */}
           <div>
             <label
               htmlFor="phoneNo"
-              className="block text-sm font-medium text-gray-700 mb-1">
+              className="block text-xs font-medium text-gray-600 mb-1">
               Phone Number *
             </label>
             <input
@@ -397,23 +373,22 @@ const ContactModal: React.FC = () => {
                 required: 'Phone number is required',
                 validate: validatePhoneNumber,
               })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
+              className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
                 errors.phoneNo ? 'border-red-500' : ''
               }`}
-              placeholder="Enter your phone number"
+              placeholder="Your contact number"
             />
             {errors.phoneNo && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-xs text-red-600">
                 {errors.phoneNo.message}
               </p>
             )}
           </div>
 
-          {/* Email Field */}
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1">
+              className="block text-xs font-medium text-gray-600 mb-1">
               Email *
             </label>
             <input
@@ -423,26 +398,25 @@ const ContactModal: React.FC = () => {
                 required: 'Email is required',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: 'Please enter a valid email address',
+                  message: 'Please enter a valid email',
                 },
               })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
+              className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 transition-colors ${
                 errors.email ? 'border-red-500' : ''
               }`}
-              placeholder="Enter your email address"
+              placeholder="your.email@example.com"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-xs text-red-600">
                 {errors.email.message}
               </p>
             )}
           </div>
 
-          {/* Message Field */}
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-1">
+              className="block text-xs font-medium text-gray-600 mb-1">
               Message *
             </label>
             <textarea
@@ -455,31 +429,29 @@ const ContactModal: React.FC = () => {
                   message: 'Message must be at least 10 characters',
                 },
               })}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 resize-none transition-colors ${
+              className={`w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500 resize-none transition-colors ${
                 errors.message ? 'border-red-500' : ''
               }`}
-              placeholder="Enter your message..."
+              placeholder="How can we help?"
             />
             {errors.message && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-xs text-red-600">
                 {errors.message.message}
               </p>
             )}
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-2">
             <button
               type="button"
               onClick={closeModal}
-              className="flex-1 px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors">
+              className="flex-1 px-4 py-2 text-sm font-semibold text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-all">
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`flex-1 px-4 py-2 text-white bg-teal-600 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors ${
-                isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-              }`}>
+              className="flex-1 px-4 py-2 text-sm font-semibold text-white bg-teal-600 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
