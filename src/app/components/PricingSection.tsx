@@ -54,36 +54,33 @@ export default function PricingSection() {
       className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-gray-50 font-inter"
     >
       <div className="container mx-auto max-w-6xl">
-        {/* Section Title */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
             Flexible Pricing for Every Business
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
             Choose the perfect RH POS plan that scales with your needs, whether
             you&apos;re a small cafe or a multi-location retail chain.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
               className={`
-                bg-white rounded-xl shadow-lg p-8 flex flex-col justify-between 
-                transition-all duration-300 hover:shadow-xl hover:-translate-y-2
+                relative bg-white rounded-xl shadow-lg p-6 md:p-8 flex flex-col justify-between 
+                transition-all duration-300 hover:shadow-xl hover:-translate-y-1 md:hover:-translate-y-2
                 ${
                   plan.isPopular
-                    ? "border-4 border-teal-700 transform scale-105"
+                    ? "border-2 md:border-4 border-teal-700 md:transform md:scale-[1.02] lg:scale-105"
                     : "border border-gray-200"
                 }
               `}
             >
               <div>
-                {/* Popular Badge */}
                 {plan.isPopular && (
-                  <div className="absolute top-0 right-0 bg-teal-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">
+                  <div className="absolute top-0 right-0 bg-teal-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                     Most Popular
                   </div>
                 )}
@@ -93,27 +90,22 @@ export default function PricingSection() {
                   {plan.name}
                 </h3>
 
-                {/* Price */}
-                <div className="mb-6">
-                  <span className="text-5xl font-extrabold text-teal-600">
+                <div className="mb-4 md:mb-6">
+                  <span className="block text-xl sm:text-1xl md:text-2xl font-extrabold text-teal-600">
                     {plan.price}
                   </span>
                   {plan.price !== "Custom" && (
-                    <span className="text-lg text-slate-500">
-                      /{plan.frequency}
+                    <span className="text-sm md:text-base text-slate-500">
+                      {plan.frequency}
                     </span>
                   )}
                 </div>
 
-                {/* Features List */}
-                <ul className="mb-8 space-y-3 text-slate-700">
+                <ul className="mb-6 md:mb-8 space-y-2 md:space-y-3 text-sm md:text-base text-slate-700">
                   {plan.features.map((feature, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className="flex items-center text-base"
-                    >
-                      <Check className="w-5 h-5 text-teal-500 mr-2 flex-shrink-0" />
-                      {feature}
+                    <li key={featureIndex} className="flex items-start">
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -122,13 +114,14 @@ export default function PricingSection() {
               {plan.name === "Enterprise" && (
                 <button
                   className={`
-                    w-full py-3 rounded-lg font-semibold text-white transition-colors duration-300 shadow-md
+                    w-full py-2 md:py-3 rounded-lg font-semibold text-white transition-colors duration-300 shadow-md
                     ${
                       plan.isPopular
                         ? "bg-teal-600 hover:bg-teal-700"
                         : "bg-gray-700 hover:bg-gray-800"
                     }
-                    transform hover:scale-105
+                    transform hover:scale-[1.02] md:hover:scale-105
+                    text-sm md:text-base
                   `}
                 >
                   {plan.buttonText}
