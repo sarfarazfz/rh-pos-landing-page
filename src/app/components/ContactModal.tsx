@@ -107,7 +107,9 @@ const ContactModal: React.FC = () => {
           );
         }
         if (response.status === 422) {
-          throw new Error('Security verification failed. Please try again.');
+          throw new Error(
+            'hi vro Security verification failed. Please try again.'
+          );
         }
         if (result.errors) {
           // Handle validation errors

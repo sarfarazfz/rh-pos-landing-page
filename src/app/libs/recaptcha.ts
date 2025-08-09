@@ -15,12 +15,11 @@ export async function verifyRecaptcha(
   score?: number;
   error?: string;
 }> {
-  // const secretKey = process.env.RECAPTCHA_SECRET_KEY_DEVELOPMENT;
   const secretKey =
     process.env.NODE_ENV === 'development'
       ? process.env.RECAPTCHA_SECRET_KEY_DEVELOPMENT
       : process.env.RECAPTCHA_SECRET_KEY;
-
+  console.log(`Using reCAPTCHA secret key: ${secretKey}`);
   if (!secretKey) {
     console.error('RECAPTCHA_SECRET_KEY environment variable is not set');
     return {

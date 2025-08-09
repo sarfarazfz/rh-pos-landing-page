@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getRecaptchaSiteKey } from '../libs/recaptcha';
 
 declare global {
   interface Window {
@@ -16,8 +17,8 @@ export function useRecaptcha() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_DEVELOPMENT;
-
+  const siteKey = getRecaptchaSiteKey();
+  console.log(`in use recaptcha Using reCAPTCHA site key: ${siteKey}`);
   useEffect(() => {
     if (!siteKey) {
       console.warn('reCAPTCHA site key not found in environment variables');
