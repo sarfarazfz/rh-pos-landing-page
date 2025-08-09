@@ -14,7 +14,7 @@ export const useContactTrigger = ({
 
   useEffect(() => {
     const isFormSubmitted =
-      localStorage.getItem('contactFormSubmitted') === 'true';
+      sessionStorage.getItem('contactFormSubmitted') === 'true';
 
     if (isFormSubmitted) {
       return;
@@ -40,7 +40,7 @@ export const useContactTrigger = ({
       timeoutRef.current = setTimeout(() => {
         if (
           !isModalOpen &&
-          localStorage.getItem('contactFormSubmitted') !== 'true'
+          sessionStorage.getItem('contactFormSubmitted') !== 'true'
         ) {
           openModal();
         }

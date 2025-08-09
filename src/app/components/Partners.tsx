@@ -1,19 +1,19 @@
-"use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
-import Image from "next/image";
-import "swiper/css";
-import "swiper/css/autoplay";
+'use client';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, FreeMode } from 'swiper/modules';
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 
 const PARTNERS = [
-  { name: "Swiggy", logo: "/partners/swiggy.jpg" },
-  { name: "Zomato", logo: "/partners/zomato.jpg" },
-  { name: "Foodpanda", logo: "/partners/foodpanda.jpeg" },
-  { name: "Noon", logo: "/partners/noon.png" },
-  { name: "Careem", logo: "/partners/careem.jpg" },
-  { name: "Talabat", logo: "/partners/talabat.jpg" },
-  { name: "Smiles", logo: "/partners/smiles.png" },
-  { name: "Deliveroo", logo: "/partners/deliveroo.jpg" },
+  { name: 'Swiggy', logo: '/partners/swiggy.jpg' },
+  { name: 'Zomato', logo: '/partners/zomato.jpg' },
+  { name: 'Foodpanda', logo: '/partners/foodpanda.jpeg' },
+  { name: 'Noon', logo: '/partners/noon.png' },
+  { name: 'Careem', logo: '/partners/careem.jpg' },
+  { name: 'Talabat', logo: '/partners/talabat.jpg' },
+  { name: 'Smiles', logo: '/partners/smiles.png' },
+  { name: 'Deliveroo', logo: '/partners/deliveroo.jpg' },
 ];
 
 export default function Partners() {
@@ -26,10 +26,12 @@ export default function Partners() {
           </h3>
         </div>
 
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <Swiper
             modules={[Autoplay, FreeMode]}
-            spaceBetween={40}
+            spaceBetween={100}
+            slidesOffsetBefore={50}
+            slidesOffsetAfter={50}
             slidesPerView="auto"
             loop={true}
             autoplay={{
@@ -45,24 +47,36 @@ export default function Partners() {
             }}
             watchSlidesProgress={true}
             breakpoints={{
-              480: { spaceBetween: 50 },
-              768: { spaceBetween: 60 },
-              1024: { spaceBetween: 70 },
+              480: {
+                spaceBetween: 80,
+                slidesOffsetBefore: 60,
+                slidesOffsetAfter: 60,
+              },
+              768: {
+                spaceBetween: 100,
+                slidesOffsetBefore: 80,
+                slidesOffsetAfter: 80,
+              },
+              1024: {
+                spaceBetween: 120,
+                slidesOffsetBefore: 100,
+                slidesOffsetAfter: 100,
+              },
             }}
-            className="!overflow-visible"
-          >
-            {/* Duplicate slides for seamless looping */}
+            className="overflow-hidden">
             {[...PARTNERS, ...PARTNERS].map((partner, index) => (
               <SwiperSlide key={`${partner.name}-${index}`} className="!w-auto">
-                <div className="relative h-16 md:h-20 w-32 md:w-48 opacity-85 hover:opacity-100 transition-opacity duration-300">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    fill
-                    className="object-contain object-center"
-                    sizes="(max-width: 768px) 128px, 192px"
-                    priority={index < 8}
-                  />
+                <div className="relative w-14 md:w-20 aspect-square overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={partner.logo}
+                      alt={`${partner.name} Logo`}
+                      fill
+                      className="object-contain object-center transition-transform duration-300 hover:scale-110"
+                      sizes="(max-width: 768px) 56px, 80px"
+                      priority={index < 8}
+                    />
+                  </div>
                 </div>
               </SwiperSlide>
             ))}

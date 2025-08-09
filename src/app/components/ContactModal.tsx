@@ -122,7 +122,7 @@ const ContactModal: React.FC = () => {
       }
 
       // Success!
-      localStorage.setItem('contactFormSubmitted', 'true');
+      sessionStorage.setItem('contactFormSubmitted', 'true');
 
       setShowSuccess(true);
       setTimeout(() => {

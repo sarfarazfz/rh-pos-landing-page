@@ -18,7 +18,6 @@ export function useRecaptcha() {
   const [isLoading, setIsLoading] = useState(false);
 
   const siteKey = getRecaptchaSiteKey();
-  console.log(`in use recaptcha Using reCAPTCHA site key: ${siteKey}`);
   useEffect(() => {
     if (!siteKey) {
       console.warn('reCAPTCHA site key not found in environment variables');

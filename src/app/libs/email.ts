@@ -31,10 +31,6 @@ export async function sendContactEmail(payload: ContactFormPayload) {
   } = payload;
 
   try {
-    console.log('Attempting to send email via Brevo...');
-    console.log('BREVO_API_KEY exists:', !!process.env.BREVO_API_KEY);
-    console.log('EMAIL_TO:', process.env.EMAIL_TO);
-
     const sendSmtpEmail = new brevo.SendSmtpEmail();
 
     // Set recipient
@@ -76,10 +72,8 @@ export async function sendContactEmail(payload: ContactFormPayload) {
     console.error('Email sending failed:', error);
 
     if (error instanceof Error) {
-      console.log('Error message:', error.message);
       throw new Error(`Failed to send email: ${error.message}`);
     } else {
-      console.log('Unknown error:', error);
       throw new Error('Unknown error occurred while sending email');
     }
   }
