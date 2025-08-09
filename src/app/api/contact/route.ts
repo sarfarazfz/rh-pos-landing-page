@@ -33,8 +33,6 @@ export async function POST(request: NextRequest) {
   const clientIP = getClientIP(request);
 
   if (!checkRateLimit(clientIP, 2, 15 * 60 * 1000)) {
-    console.log(`Rate limit exceeded for IP ${clientIP}`);
-
     return NextResponse.json(
       {
         message: 'Too many requests. Please try again later.',
@@ -68,7 +66,6 @@ export async function POST(request: NextRequest) {
       recaptchaToken,
       'contact_form'
     );
-    console.log(`reCAPTCHA verification result:`, recaptchaResult);
 
     if (!recaptchaResult.success) {
       console.warn(

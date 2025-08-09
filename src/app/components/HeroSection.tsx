@@ -19,14 +19,14 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-sm mx-auto sm:max-w-md">
           <a
             href="#"
-            className="text-center text-base font-semibold text-white bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-          >
+            className="text-center text-base font-semibold text-white bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">
             Get A Free Demo
           </a>
           <a
-            href="#"
-            className="text-center text-base font-semibold text-slate-700 bg-white hover:bg-slate-200 py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105"
-          >
+            href="https://youtube.com/playlist?list=PLy1se87g03FFn3I36kWUICOKydRJS2IFd&si=kYAvFcHt35YPfyha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center text-base font-semibold text-slate-700 bg-white hover:bg-slate-200 py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105">
             Watch Video
           </a>
         </div>

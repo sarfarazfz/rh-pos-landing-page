@@ -5,33 +5,7 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-const TESTIMONIALS = [
-  {
-    id: 1,
-    quote:
-      'Switching to RH POS was a game-changer. Our service is faster, our inventory is under control, and our customers love the loyalty program. Sales are up 15%!',
-    name: 'Maria Garcia',
-    role: 'Owner, The Corner Cafe',
-    avatar: 'https://placehold.co/100x100/14b8a6/FFFFFF?text=MG',
-  },
-  {
-    id: 2,
-    quote:
-      'The analytics are incredibly powerful. I can see my top-selling items and busiest hours at a glance, which helps me make smarter staffing and purchasing decisions.',
-    name: 'David Chen',
-    role: 'Manager, Urban Eats',
-    avatar: 'https://placehold.co/100x100/0d9488/FFFFFF?text=DC',
-  },
-  {
-    id: 3,
-    quote:
-      'The 24/7 support is fantastic. Any time I have a question, the RH POS team is there to help immediately. It gives me great peace of mind.',
-    name: 'John Smith',
-    role: 'Founder, The Burger Joint',
-    avatar: 'https://placehold.co/100x100/2dd4bf/FFFFFF?text=JS',
-  },
-];
+import Testimonials from '../assets/testimonials';
 
 export default function TestimonialSlider() {
   return (
@@ -68,7 +42,7 @@ export default function TestimonialSlider() {
                 spaceBetween: 40,
               },
             }}>
-            {TESTIMONIALS.map((testimonial) => (
+            {Testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
                 <div className="pt-2 pb-12">
                   <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 sm:p-8 max-w-2xl mx-auto hover:-translate-y-1">
