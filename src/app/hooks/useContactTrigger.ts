@@ -11,6 +11,7 @@ export const useContactTrigger = ({
 }: UseContactTriggerProps) => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollListenerRef = useRef<(() => void) | null>(null);
+  const hasTriggeredScroll = useRef(false);
 
   useEffect(() => {
     const isFormSubmitted =
@@ -19,15 +20,20 @@ export const useContactTrigger = ({
     if (isFormSubmitted) {
       return;
     }
-
-    // Scroll trigger - opens modal when user scrolls 70% down the page
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercentage = (scrollTop / scrollHeight) * 100;
-      if (scrollPercentage >= 99.5 && !isModalOpen) {
+
+      if (
+        scrollPercentage >= 60 &&
+        !isModalOpen &&
+        !hasTriggeredScroll.current &&
+        sessionStorage.getItem('contactFormSubmitted') !== 'true'
+      ) {
+        hasTriggeredScroll.current = true;
         openModal();
       }
     };
