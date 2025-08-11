@@ -32,15 +32,19 @@ export default function WhatsAppButton() {
   return (
     <button
       onClick={handleClick}
-      className={`fixed bottom-4 left-4 bg-green-500 rounded-full p-4 shadow-lg hover:bg-green-600 transition-all flex items-center justify-center
-      ${
-        isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10 pointer-events-none'
-      }`}
+      className={`fixed bottom-4 left-4 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all flex items-center justify-center gap-2
+    px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3
+    text-sm sm:text-base md:text-lg
+    ${
+      isVisible
+        ? 'opacity-100 translate-y-0'
+        : 'opacity-0 translate-y-10 pointer-events-none'
+    }`}
       aria-label="Contact via WhatsApp">
-      <FaWhatsapp size={32} />
-      Talk to us
+      <FaWhatsapp className="text-white" size={20} />
+      <span className="hidden sm:inline text-white font-medium">
+        Talk to us
+      </span>
     </button>
   );
 }
