@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Link, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import ContactModal from '../ContactModal';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
