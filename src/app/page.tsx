@@ -11,6 +11,7 @@ import TestimonialSlider from './components/Testimonials';
 import ContactModal from './components/ContactModal';
 import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
+import WhatsAppButton from './components/WhatsappButton';
 
 export default function Home() {
   return (
@@ -25,9 +26,8 @@ export default function Home() {
         <PricingSection />
         <TestimonialSlider />
         <FAQSection />
+        <WhatsAppButton />
       </main>
-
-      <ContactModal />
     </>
   );
 }

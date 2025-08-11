@@ -52,7 +52,7 @@ export const useContactTrigger = ({
         }
         // Set up next timeout
         setTimeoutTrigger();
-      }, 15000);
+      }, 40000);
     };
 
     // Set up scroll listener
