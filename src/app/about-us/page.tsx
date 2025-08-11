@@ -12,6 +12,7 @@ import {
   Zap,
 } from 'lucide-react';
 import GetDemoModal from '../components/GetDemoModel';
+import WhatsAppButton from '../components/WhatsappButton';
 
 export default function AboutPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -353,10 +354,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <GetDemoModal
+      {/* <GetDemoModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-      />
+      /> */}
+      <WhatsAppButton />
     </main>
   );
 }

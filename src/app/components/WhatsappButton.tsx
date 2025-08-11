@@ -7,7 +7,10 @@ export default function WhatsAppButton() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleClick = () => {
-    window.open('https://wa.me/1234567890', '_blank');
+    window.open(
+      `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`,
+      '_blank'
+    );
   };
 
   useEffect(() => {
