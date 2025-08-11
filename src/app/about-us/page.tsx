@@ -1,6 +1,6 @@
-"use client";
-import React from "react";
-import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   Users,
   Clock,
@@ -10,9 +10,11 @@ import {
   Server,
   Shield,
   Zap,
-} from "lucide-react";
+} from 'lucide-react';
+import GetDemoModal from '../components/GetDemoModel';
 
 export default function AboutPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -83,29 +85,28 @@ export default function AboutPage() {
             {[
               {
                 icon: <Server className="w-6 h-6 text-teal-600" />,
-                title: "Cloud Infrastructure",
-                description: "AWS-powered for maximum reliability",
+                title: 'Cloud Infrastructure',
+                description: 'AWS-powered for maximum reliability',
               },
               {
                 icon: <Smartphone className="w-6 h-6 text-teal-600" />,
-                title: "Mobile First",
-                description: "Works seamlessly on all devices",
+                title: 'Mobile First',
+                description: 'Works seamlessly on all devices',
               },
               {
                 icon: <Shield className="w-6 h-6 text-teal-600" />,
-                title: "Bank-grade Security",
-                description: "End-to-end encryption",
+                title: 'Bank-grade Security',
+                description: 'End-to-end encryption',
               },
               {
                 icon: <Zap className="w-6 h-6 text-teal-600" />,
-                title: "Real-time Sync",
-                description: "Instant updates across locations",
+                title: 'Real-time Sync',
+                description: 'Instant updates across locations',
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 hover:border-teal-300 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md text-center"
-              >
+                className="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 hover:border-teal-300 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md text-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-50 rounded-md flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   {item.icon}
                 </div>
@@ -138,29 +139,28 @@ export default function AboutPage() {
             {[
               {
                 icon: <Users className="w-3.5 h-3.5 text-teal-600" />,
-                title: "User-first design",
-                description: "Intuitive interface for restaurant workflows",
+                title: 'User-first design',
+                description: 'Intuitive interface for restaurant workflows',
                 image:
-                  "https://placehold.co/600x400/e5f5f9/teal?text=UX+Design",
+                  'https://placehold.co/600x400/e5f5f9/teal?text=UX+Design',
               },
               {
                 icon: <Globe className="w-3.5 h-3.5 text-teal-600" />,
-                title: "Local expertise",
-                description: "Built for Middle Eastern markets",
+                title: 'Local expertise',
+                description: 'Built for Middle Eastern markets',
                 image:
-                  "https://placehold.co/600x400/e5f5f9/teal?text=Localized",
+                  'https://placehold.co/600x400/e5f5f9/teal?text=Localized',
               },
               {
                 icon: <Clock className="w-3.5 h-3.5 text-teal-600" />,
-                title: "Always improving",
-                description: "Continuous updates from feedback",
-                image: "https://placehold.co/600x400/e5f5f9/teal?text=Updates",
+                title: 'Always improving',
+                description: 'Continuous updates from feedback',
+                image: 'https://placehold.co/600x400/e5f5f9/teal?text=Updates',
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-md border border-slate-200 hover:shadow-xs transition-all overflow-hidden group"
-              >
+                className="bg-white rounded-md border border-slate-200 hover:shadow-xs transition-all overflow-hidden group">
                 <div className="relative aspect-[5/3] w-full">
                   <Image
                     src={item.image}
@@ -203,22 +203,21 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto">
             {[
               {
-                name: "Sarfaraz Shaikh",
-                role: "Co-Founder & CEO",
-                image: "https://placehold.co/600x600/e5f5f9/teal?text=Ahmed",
-                bio: "15+ years in hospitality tech",
+                name: 'Sarfaraz Shaikh',
+                role: 'Co-Founder & CEO',
+                image: 'https://placehold.co/600x600/e5f5f9/teal?text=Ahmed',
+                bio: '15+ years in hospitality tech',
               },
               {
-                name: "Javad Sayyad",
-                role: "Co-Founder & CTO",
-                image: "https://placehold.co/600x600/e5f5f9/teal?text=Sarah",
-                bio: "Former lead engineer",
+                name: 'Javad Sayyad',
+                role: 'Co-Founder & CTO',
+                image: 'https://placehold.co/600x600/e5f5f9/teal?text=Sarah',
+                bio: 'Former lead engineer',
               },
             ].map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-md border border-slate-200 overflow-hidden hover:shadow-xs transition-all"
-              >
+                className="bg-white rounded-md border border-slate-200 overflow-hidden hover:shadow-xs transition-all">
                 <div className="relative aspect-square w-full">
                   <Image
                     src={member.image}
@@ -258,58 +257,57 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
             {[
               {
-                title: "Restaurant First",
+                title: 'Restaurant First',
                 description:
-                  "Built by restaurateurs for restaurateurs. We speak your language.",
-                icon: "🍽️",
-                bgColor: "bg-teal-50",
-                borderColor: "border-teal-100",
+                  'Built by restaurateurs for restaurateurs. We speak your language.',
+                icon: '🍽️',
+                bgColor: 'bg-teal-50',
+                borderColor: 'border-teal-100',
               },
               {
-                title: "Relentless Innovation",
+                title: 'Relentless Innovation',
                 description:
-                  "We push boundaries to deliver solutions that actually move your business forward.",
-                icon: "🚀",
-                bgColor: "bg-blue-50",
-                borderColor: "border-blue-100",
+                  'We push boundaries to deliver solutions that actually move your business forward.',
+                icon: '🚀',
+                bgColor: 'bg-blue-50',
+                borderColor: 'border-blue-100',
               },
               {
-                title: "Transparent Partnerships",
+                title: 'Transparent Partnerships',
                 description:
-                  "No hidden fees or surprises. Just honest relationships built on trust.",
-                icon: "🤝",
-                bgColor: "bg-amber-50",
-                borderColor: "border-amber-100",
+                  'No hidden fees or surprises. Just honest relationships built on trust.',
+                icon: '🤝',
+                bgColor: 'bg-amber-50',
+                borderColor: 'border-amber-100',
               },
               {
-                title: "Local Expertise",
+                title: 'Local Expertise',
                 description:
-                  "Deep understanding of Middle Eastern markets and customs.",
-                icon: "🌍",
-                bgColor: "bg-emerald-50",
-                borderColor: "border-emerald-100",
+                  'Deep understanding of Middle Eastern markets and customs.',
+                icon: '🌍',
+                bgColor: 'bg-emerald-50',
+                borderColor: 'border-emerald-100',
               },
               {
-                title: "Simplicity Wins",
+                title: 'Simplicity Wins',
                 description:
-                  "We remove complexity so you can focus on what matters - your guests.",
-                icon: "✨",
-                bgColor: "bg-purple-50",
-                borderColor: "border-purple-100",
+                  'We remove complexity so you can focus on what matters - your guests.',
+                icon: '✨',
+                bgColor: 'bg-purple-50',
+                borderColor: 'border-purple-100',
               },
               {
-                title: "Joy in Service",
+                title: 'Joy in Service',
                 description:
-                  "We love what we do and it shows in every interaction.",
-                icon: "😊",
-                bgColor: "bg-rose-50",
-                borderColor: "border-rose-100",
+                  'We love what we do and it shows in every interaction.',
+                icon: '😊',
+                bgColor: 'bg-rose-50',
+                borderColor: 'border-rose-100',
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className={`${item.bgColor} p-4 sm:p-6 rounded-xl border ${item.borderColor} hover:shadow-md transition-all hover:-translate-y-1 group`}
-              >
+                className={`${item.bgColor} p-4 sm:p-6 rounded-xl border ${item.borderColor} hover:shadow-md transition-all hover:-translate-y-1 group`}>
                 <span className="text-2xl sm:text-3xl mb-3 block transition-transform group-hover:scale-110">
                   {item.icon}
                 </span>
@@ -337,21 +335,28 @@ export default function AboutPage() {
               and grow their business
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <button className="bg-teal-600 text-white hover:scale-105 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all border-2 border-teal-600 text-sm sm:text-base">
+              {/* <button
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
+                className="bg-teal-600 text-white hover:scale-105 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all border-2 border-teal-600 text-sm sm:text-base">
                 Get a Demo
-              </button>
+              </button> */}
               <button
                 onClick={() => {
-                  window.dispatchEvent(new CustomEvent("openContactModal"));
+                  window.dispatchEvent(new CustomEvent('openContactModal'));
                 }}
-                className="bg-white text-teal-600 border-teal-600 hover:scale-105 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all border-2 text-sm sm:text-base"
-              >
+                className="bg-white text-teal-600 border-teal-600 hover:scale-105 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all border-2 text-sm sm:text-base">
                 Contact Sales
               </button>
             </div>
           </div>
         </div>
       </section>
+      <GetDemoModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   );
 }

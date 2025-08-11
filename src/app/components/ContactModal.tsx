@@ -15,7 +15,12 @@ interface ContactFormData {
   restaurantCountry: string;
 }
 
-const ContactModal: React.FC = () => {
+interface ContactModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
