@@ -25,7 +25,7 @@ export default function AboutPage() {
               About RH POS
             </h1>
             <p className="text-lg md:text-xl text-teal-100 max-w-2xl mx-auto">
-              Modern POS solutions designed for today's restaurants
+              Modern POS solutions designed for todays restaurants
             </p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function AboutPage() {
               Built different from day one
             </h2>
             <p className="text-xs md:text-sm text-slate-600">
-              We're not just another POS company. Here's what makes us
+              We are not just another POS company. Here it is what makes us
               different:
             </p>
           </div>

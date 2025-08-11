@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Link, Menu, X } from 'lucide-react';
 import ContactModal from '../ContactModal';
 
 export default function Header() {
@@ -22,31 +22,32 @@ export default function Header() {
             RH<span className="text-teal-600">POS</span>
           </div>
 
-          {/* Centered Navigation Items - Hidden on mobile */}
           <div className="hidden md:flex flex-1 justify-center items-center space-x-8 font-medium mx-4">
-            <a
+            <Link
               href="/#features"
               className="hover:text-teal-600 transition-colors">
               Features
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#outlet-types"
               className="hover:text-teal-600 transition-colors">
               Outlet Types
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#testimonials"
               className="hover:text-teal-600 transition-colors">
               Why RH POS
-            </a>
-            <a href="/#faq" className="hover:text-teal-600 transition-colors">
+            </Link>
+            <Link
+              href="/#faq"
+              className="hover:text-teal-600 transition-colors">
               FAQs
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#pricing"
               className="hover:text-teal-600 transition-colors">
               Pricing
-            </a>
+            </Link>
           </div>
 
           {/* Contact Button on the right - Hidden on mobile */}
@@ -60,7 +61,6 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile Menu Button - Visible only on mobile */}
           <button
             className="md:hidden text-slate-800 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -72,7 +72,6 @@ export default function Header() {
             )}
           </button>
 
-          {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg py-4 px-6 border-t border-slate-200">
               <div className="flex flex-col space-y-4 font-medium">
