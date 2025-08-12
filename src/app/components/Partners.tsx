@@ -63,7 +63,7 @@ export default function Partners() {
                 slidesOffsetAfter: 100,
               },
             }}
-            className="overflow-hidden">
+            className="overflow-hidden p-20">
             {[...PARTNERS, ...PARTNERS].map((partner, index) => (
               <SwiperSlide key={`${partner.name}-${index}`} className="!w-auto">
                 <div className="relative w-14 md:w-20 aspect-square overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">

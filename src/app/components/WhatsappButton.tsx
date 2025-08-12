@@ -16,10 +16,8 @@ export default function WhatsAppButton() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        // scrolling down
         setIsVisible(true);
       } else {
-        // scrolling up
         setIsVisible(false);
       }
       setLastScrollY(window.scrollY);
@@ -35,6 +33,7 @@ export default function WhatsAppButton() {
       className={`fixed bottom-4 left-4 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all flex items-center justify-center gap-2
     px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3
     text-sm sm:text-base md:text-lg
+    z-50
     ${
       isVisible
         ? 'opacity-100 translate-y-0'
