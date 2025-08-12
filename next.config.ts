@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        // Add placehold.co to your allowed domains
         protocol: 'https',
         hostname: 'placehold.co',
         pathname: '/**',
