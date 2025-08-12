@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import ContactModal from '../ContactModal';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import ContactModal from "../ContactModal";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,8 +12,8 @@ export default function Header() {
 
   useEffect(() => {
     const handler = () => setIsModalOpen(true);
-    window.addEventListener('openContactModal', handler);
-    return () => window.removeEventListener('openContactModal', handler);
+    window.addEventListener("openContactModal", handler);
+    return () => window.removeEventListener("openContactModal", handler);
   }, []);
   return (
     <>
@@ -23,30 +23,35 @@ export default function Header() {
             RH<span className="text-teal-600">POS</span>
           </div>
 
-          <div className="hidden md:flex flex-1 justify-center items-center space-x-8 font-medium mx-4">
+          <div className="hidden md:flex md:text-sm flex-1 justify-center items-center space-x-8 font-medium mx-4">
             <Link
               href="/#features"
-              className="hover:text-teal-600 transition-colors">
+              className="hover:text-teal-600 transition-colors"
+            >
               Features
             </Link>
             <Link
               href="/#outlet-types"
-              className="hover:text-teal-600 transition-colors">
+              className="hover:text-teal-600 transition-colors"
+            >
               Outlet Types
             </Link>
             <Link
               href="/#testimonials"
-              className="hover:text-teal-600 transition-colors">
+              className="hover:text-teal-600 transition-colors"
+            >
               Why RH POS
             </Link>
             <Link
               href="/#faq"
-              className="hover:text-teal-600 transition-colors">
+              className="hover:text-teal-600 transition-colors"
+            >
               FAQs
             </Link>
             <Link
               href="/#pricing"
-              className="hover:text-teal-600 transition-colors">
+              className="hover:text-teal-600 transition-colors"
+            >
               Pricing
             </Link>
           </div>
@@ -55,9 +60,10 @@ export default function Header() {
           <div className="hidden md:block">
             <button
               onClick={() => {
-                window.dispatchEvent(new CustomEvent('openContactModal'));
+                window.dispatchEvent(new CustomEvent("openContactModal"));
               }}
-              className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors">
+              className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors"
+            >
               Contact Us
             </button>
           </div>
@@ -65,7 +71,8 @@ export default function Header() {
           <button
             className="md:hidden text-slate-800 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu">
+            aria-label="Toggle menu"
+          >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
@@ -79,36 +86,42 @@ export default function Header() {
                 <a
                   href="#features"
                   className="hover:text-teal-600 transition-colors py-2"
-                  onClick={closeMenu}>
+                  onClick={closeMenu}
+                >
                   Features
                 </a>
                 <a
                   href="#outlet-types"
                   className="hover:text-teal-600 transition-colors py-2"
-                  onClick={closeMenu}>
+                  onClick={closeMenu}
+                >
                   Outlet Types
                 </a>
                 <a
                   href="#testimonials"
                   className="hover:text-teal-600 transition-colors py-2"
-                  onClick={closeMenu}>
+                  onClick={closeMenu}
+                >
                   Why RH POS
                 </a>
                 <a
                   href="#faq"
-                  className="hover:text-teal-600 transition-colors">
+                  className="hover:text-teal-600 transition-colors"
+                >
                   FAQs
                 </a>
                 <a
                   href="#pricing"
-                  className="hover:text-teal-600 transition-colors">
+                  className="hover:text-teal-600 transition-colors"
+                >
                   Pricing
                 </a>
                 <button
                   onClick={() => {
-                    window.dispatchEvent(new CustomEvent('openContactModal'));
+                    window.dispatchEvent(new CustomEvent("openContactModal"));
                   }}
-                  className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors">
+                  className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors"
+                >
                   Contact Us
                 </button>
               </div>
