@@ -106,13 +106,13 @@ export default function Header() {
                 </a>
                 <a
                   href="#faq"
-                  className="hover:text-teal-600 transition-colors"
+                  className="hover:text-teal-600 transition-colors py-2"
                 >
                   FAQs
                 </a>
                 <a
                   href="#pricing"
-                  className="hover:text-teal-600 transition-colors"
+                  className="hover:text-teal-600 transition-colors py-2"
                 >
                   Pricing
                 </a>
