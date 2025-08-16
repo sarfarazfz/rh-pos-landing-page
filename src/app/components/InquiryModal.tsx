@@ -67,14 +67,13 @@ const InquiryModal: React.FC<InquiryModalProps> = ({
   });
 
   useEffect(() => {
-    // Don't show inquiry if contact is open or form was already submitted
     const isSubmitted = sessionStorage.getItem('inquiryFormSubmitted');
     if (isSubmitted || isContactModalOpen) return;
 
     // Set timer for inquiry popup
     const timer = setTimeout(() => {
       onOpen();
-    }, 5000);
+    }, 25000);
 
     return () => clearTimeout(timer);
   }, [isContactModalOpen, onOpen]);
