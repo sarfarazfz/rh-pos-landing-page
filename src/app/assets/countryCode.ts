@@ -1,0 +1,23 @@
+// src/assets/countryCodes.ts
+export const countryCodes = [
+  { code: '+91', label: 'India', flag: '🇮🇳' },
+  { code: '+1', label: 'United States', flag: '🇺🇸' },
+  { code: '+44', label: 'United Kingdom', flag: '🇬🇧' },
+  { code: '+61', label: 'Australia', flag: '🇦🇺' },
+  { code: '+49', label: 'Germany', flag: '🇩🇪' },
+  { code: '+33', label: 'France', flag: '🇫🇷' },
+  { code: '+81', label: 'Japan', flag: '🇯🇵' },
+  { code: '+86', label: 'China', flag: '🇨🇳' },
+  { code: '+7', label: 'Russia', flag: '🇷🇺' },
+  { code: '+39', label: 'Italy', flag: '🇮🇹' },
+  { code: '+34', label: 'Spain', flag: '🇪🇸' },
+  { code: '+971', label: 'United Arab Emirates', flag: '🇦🇪' },
+  { code: '+966', label: 'Saudi Arabia', flag: '🇸🇦' },
+  { code: '+92', label: 'Pakistan', flag: '🇵🇰' },
+  { code: '+880', label: 'Bangladesh', flag: '🇧🇩' },
+  { code: '+82', label: 'South Korea', flag: '🇰🇷' },
+  { code: '+55', label: 'Brazil', flag: '🇧🇷' },
+  { code: '+27', label: 'South Africa', flag: '🇿🇦' },
+  { code: '+94', label: 'Sri Lanka', flag: '🇱🇰' },
+  { code: '+90', label: 'Turkey', flag: '🇹🇷' },
+];

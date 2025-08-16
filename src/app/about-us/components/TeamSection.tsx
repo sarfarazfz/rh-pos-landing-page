@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 export default function TeamSection() {
   return (
     <section className="py-10 md:py-14 bg-slate-50">
@@ -15,20 +15,19 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto">
           {[
             {
-              name: "Sarfaraz Shaikh",
-              role: "Co-Founder & CEO",
-              image: "https://placehold.co/600x600/e5f5f9/teal?text=Sarfaraz",
+              name: 'Sarfaraz Shaikh',
+              role: 'Co-Founder & CEO',
+              image: 'https://placehold.co/600x600/e5f5f9/teal?text=Sarfaraz',
             },
             {
-              name: "Javad Sayyad",
-              role: "Co-Founder & CTO",
-              image: "https://placehold.co/600x600/e5f5f9/teal?text=Javad",
+              name: 'Javad Sayyad',
+              role: 'Co-Founder & CTO',
+              image: 'https://placehold.co/600x600/e5f5f9/teal?text=Javad',
             },
           ].map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-md border border-slate-200 overflow-hidden hover:shadow-xs transition-all"
-            >
+              className="bg-white rounded-md border border-slate-200 overflow-hidden hover:shadow-xs transition-all">
               <div className="relative aspect-square w-full">
                 <Image
                   src={member.image}

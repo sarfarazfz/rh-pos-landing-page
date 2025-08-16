@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Users, Clock, Globe } from "lucide-react";
+import Image from 'next/image';
+import { Users, Clock, Globe } from 'lucide-react';
 export default function CorePrinciples() {
   return (
     <section className="py-10 md:py-14">
@@ -18,27 +18,26 @@ export default function CorePrinciples() {
           {[
             {
               icon: <Users className="w-3.5 h-3.5 text-teal-600" />,
-              title: "User-first design",
-              description: "Intuitive interface for restaurant workflows",
-              image: "https://placehold.co/600x400/e5f5f9/teal?text=UX+Design",
+              title: 'User-first design',
+              description: 'Intuitive interface for restaurant workflows',
+              image: 'https://placehold.co/600x400/e5f5f9/teal?text=UX+Design',
             },
             {
               icon: <Globe className="w-3.5 h-3.5 text-teal-600" />,
-              title: "Local expertise",
-              description: "Built for Middle Eastern markets",
-              image: "https://placehold.co/600x400/e5f5f9/teal?text=Localized",
+              title: 'Local expertise',
+              description: 'Built for Middle Eastern markets',
+              image: 'https://placehold.co/600x400/e5f5f9/teal?text=Localized',
             },
             {
               icon: <Clock className="w-3.5 h-3.5 text-teal-600" />,
-              title: "Always improving",
-              description: "Continuous updates from feedback",
-              image: "https://placehold.co/600x400/e5f5f9/teal?text=Updates",
+              title: 'Always improving',
+              description: 'Continuous updates from feedback',
+              image: 'https://placehold.co/600x400/e5f5f9/teal?text=Updates',
             },
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-md border border-slate-200 hover:shadow-xs transition-all overflow-hidden group"
-            >
+              className="bg-white rounded-md border border-slate-200 hover:shadow-xs transition-all overflow-hidden group">
               <div className="relative aspect-[5/3] w-full">
                 <Image
                   src={item.image}

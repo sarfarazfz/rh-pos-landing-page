@@ -1,4 +1,4 @@
-import { Smartphone, Server, Shield, Zap } from "lucide-react";
+import { Smartphone, Server, Shield, Zap } from 'lucide-react';
 export default function TechStack() {
   return (
     <section className="bg-slate-50 py-12 md:py-20">
@@ -16,29 +16,28 @@ export default function TechStack() {
           {[
             {
               icon: <Server className="w-6 h-6 text-teal-600" />,
-              title: "Cloud Infrastructure",
-              description: "AWS-powered for maximum reliability",
+              title: 'Cloud Infrastructure',
+              description: 'AWS-powered for maximum reliability',
             },
             {
               icon: <Smartphone className="w-6 h-6 text-teal-600" />,
-              title: "Mobile First",
-              description: "Works seamlessly on all devices",
+              title: 'Mobile First',
+              description: 'Works seamlessly on all devices',
             },
             {
               icon: <Shield className="w-6 h-6 text-teal-600" />,
-              title: "Bank-grade Security",
-              description: "End-to-end encryption",
+              title: 'Bank-grade Security',
+              description: 'End-to-end encryption',
             },
             {
               icon: <Zap className="w-6 h-6 text-teal-600" />,
-              title: "Real-time Sync",
-              description: "Instant updates across locations",
+              title: 'Real-time Sync',
+              description: 'Instant updates across locations',
             },
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 hover:border-teal-300 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md text-center"
-            >
+              className="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 hover:border-teal-300 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-50 rounded-md flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 {item.icon}
               </div>

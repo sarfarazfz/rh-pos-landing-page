@@ -14,58 +14,57 @@ export default function ValuesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {[
             {
-              title: "Restaurant First",
+              title: 'Restaurant First',
               description:
-                "Built by restaurateurs for restaurateurs. We speak your language.",
-              icon: "🍽️",
-              bgColor: "bg-teal-50",
-              borderColor: "border-teal-100",
+                'Built by restaurateurs for restaurateurs. We speak your language.',
+              icon: '🍽️',
+              bgColor: 'bg-teal-50',
+              borderColor: 'border-teal-100',
             },
             {
-              title: "Relentless Innovation",
+              title: 'Relentless Innovation',
               description:
-                "We push boundaries to deliver solutions that actually move your business forward.",
-              icon: "🚀",
-              bgColor: "bg-blue-50",
-              borderColor: "border-blue-100",
+                'We push boundaries to deliver solutions that actually move your business forward.',
+              icon: '🚀',
+              bgColor: 'bg-blue-50',
+              borderColor: 'border-blue-100',
             },
             {
-              title: "Transparent Partnerships",
+              title: 'Transparent Partnerships',
               description:
-                "No hidden fees or surprises. Just honest relationships built on trust.",
-              icon: "🤝",
-              bgColor: "bg-amber-50",
-              borderColor: "border-amber-100",
+                'No hidden fees or surprises. Just honest relationships built on trust.',
+              icon: '🤝',
+              bgColor: 'bg-amber-50',
+              borderColor: 'border-amber-100',
             },
             {
-              title: "Local Expertise",
+              title: 'Local Expertise',
               description:
-                "Deep understanding of Middle Eastern markets and customs.",
-              icon: "🌍",
-              bgColor: "bg-emerald-50",
-              borderColor: "border-emerald-100",
+                'Deep understanding of Middle Eastern markets and customs.',
+              icon: '🌍',
+              bgColor: 'bg-emerald-50',
+              borderColor: 'border-emerald-100',
             },
             {
-              title: "Simplicity Wins",
+              title: 'Simplicity Wins',
               description:
-                "We remove complexity so you can focus on what matters - your guests.",
-              icon: "✨",
-              bgColor: "bg-purple-50",
-              borderColor: "border-purple-100",
+                'We remove complexity so you can focus on what matters - your guests.',
+              icon: '✨',
+              bgColor: 'bg-purple-50',
+              borderColor: 'border-purple-100',
             },
             {
-              title: "Joy in Service",
+              title: 'Joy in Service',
               description:
-                "We love what we do and it shows in every interaction.",
-              icon: "😊",
-              bgColor: "bg-rose-50",
-              borderColor: "border-rose-100",
+                'We love what we do and it shows in every interaction.',
+              icon: '😊',
+              bgColor: 'bg-rose-50',
+              borderColor: 'border-rose-100',
             },
           ].map((item, index) => (
             <div
               key={index}
-              className={`${item.bgColor} p-4 sm:p-6 rounded-xl border ${item.borderColor} hover:shadow-md transition-all hover:-translate-y-1 group`}
-            >
+              className={`${item.bgColor} p-4 sm:p-6 rounded-xl border ${item.borderColor} hover:shadow-md transition-all hover:-translate-y-1 group`}>
               <span className="text-2xl sm:text-3xl mb-3 block transition-transform group-hover:scale-110">
                 {item.icon}
               </span>

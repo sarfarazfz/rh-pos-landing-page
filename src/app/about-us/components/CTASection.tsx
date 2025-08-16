@@ -20,10 +20,9 @@ export default function CTASection() {
               </button> */}
             <button
               onClick={() => {
-                window.dispatchEvent(new CustomEvent("openContactModal"));
+                window.dispatchEvent(new CustomEvent('openContactModal'));
               }}
-              className="bg-white text-teal-600 border-teal-600 hover:scale-105 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all border-2 text-sm sm:text-base"
-            >
+              className="bg-white text-teal-600 border-teal-600 hover:scale-105 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all border-2 text-sm sm:text-base">
               Contact Sales
             </button>
           </div>
