@@ -164,7 +164,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 Get in Touch
               </h2>
               <p className="text-sm text-slate-500 mt-1">
-                Fill out the form below and we'll get back to you.
+                Fill out the form below and we will get back to you.
               </p>
             </div>
           </div>

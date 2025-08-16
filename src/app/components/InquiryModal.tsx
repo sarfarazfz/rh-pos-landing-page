@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { clsx } from 'clsx';
-import { User, Phone, ListChecks, MessageCircle } from 'lucide-react';
 
 // Custom Hooks
 import { useMountTransition } from '../hooks/useMountTransition';
@@ -204,7 +203,7 @@ const InquiryModal: React.FC<InquiryModalProps> = ({
             What are you looking for?
           </h2>
           <p className="text-sm text-slate-500 mt-1">
-            Let us know how we can help, and we'll get in touch right away.
+            Let us know how we can help, and we will get in touch right away.
           </p>
         </div>
 
