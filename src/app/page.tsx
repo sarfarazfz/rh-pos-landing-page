@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
 import FeaturesSection from './components/FeatureSection';
 import HeroSection from './components/HeroSection';
 import ProductShowcase from './components/ProductShowcase';
@@ -11,10 +10,8 @@ import TestimonialSlider from './components/Testimonials';
 import PricingSection from './components/PricingSection';
 import FAQSection from './components/FAQSection';
 import WhatsAppButton from './components/WhatsappButton';
-import { useModalTrigger } from './hooks/useModalTrigger';
 
 export default function Home() {
-  
   return (
     <>
       <main>
@@ -28,7 +25,6 @@ export default function Home() {
         <TestimonialSlider />
         <FAQSection />
         <WhatsAppButton />
-        
       </main>
     </>
   );

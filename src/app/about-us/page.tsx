@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import GetDemoModal from '../components/GetDemoModel';
 import WhatsAppButton from '../components/WhatsappButton';
 import HeroSection from './components/HeroSection';
 import FoundingStory from './components/FoundingStory';
@@ -11,7 +10,6 @@ import ValuesSection from './components/ValuesSection';
 import CTASection from './components/CTASection';
 
 export default function AboutPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <main className="min-h-screen bg-white">
       <HeroSection />
