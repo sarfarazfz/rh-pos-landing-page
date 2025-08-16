@@ -16,8 +16,15 @@ const contactFormSchema = z.object({
   restaurantCity: z.string(),
   restaurantCountry: z.string(),
 });
+const inquiryFormSchema = z.object({
+  name: z.string(),
+  phoneNo: z.string(),
+  countryCode: z.string(),
+  queryType: z.string(),
+});
 
 type ContactFormPayload = z.infer<typeof contactFormSchema>;
+type InquiryFormPayload = z.infer<typeof inquiryFormSchema>;
 
 export async function sendContactEmail(payload: ContactFormPayload) {
   const {
@@ -75,6 +82,48 @@ export async function sendContactEmail(payload: ContactFormPayload) {
       throw new Error(`Failed to send email: ${error.message}`);
     } else {
       throw new Error('Unknown error occurred while sending email');
+    }
+  }
+}
+
+export async function sendInquiryEmail(payload: InquiryFormPayload) {
+  const { name, phoneNo, countryCode, queryType } = payload;
+
+  try {
+    const sendSmtpEmail = new brevo.SendSmtpEmail();
+
+    sendSmtpEmail.to = [{ email: process.env.EMAIL_TO! }];
+
+    sendSmtpEmail.subject = `New Inquiry from ${name}`;
+
+    sendSmtpEmail.htmlContent = `
+      <html>
+        <body>
+          <h2>New Inquiry Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone No.:</strong> ${countryCode} ${phoneNo}</p>
+          <p><strong>Query Type:</strong> ${queryType}</p>
+        </body>
+      </html>
+    `;
+
+    sendSmtpEmail.sender = {
+      name: `${name} (via rh poss landing page)`,
+      email: process.env.FROM_EMAIL!,
+    };
+
+    sendSmtpEmail.replyTo = { email: process.env.FROM_EMAIL!, name: name };
+
+    const result = await apiInstance.sendTransacEmail(sendSmtpEmail);
+
+    return { success: true, data: result };
+  } catch (error: unknown) {
+    console.error('Inquiry email sending failed:', error);
+
+    if (error instanceof Error) {
+      throw new Error(`Failed to send inquiry email: ${error.message}`);
+    } else {
+      throw new Error('Unknown error occurred while sending inquiry email');
     }
   }
 }

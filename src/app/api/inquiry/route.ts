@@ -1,26 +1,24 @@
-import { sendContactEmail } from '@/app/libs/email';
+import { sendInquiryEmail } from '@/app/libs/email';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { checkRateLimit, getClientIP } from '@/app/libs/rateLimiter';
 import { verifyRecaptcha } from '@/app/libs/recaptcha';
-
-const contactFormSchema = z.object({
+import { countryCodes } from '@/app/assets/countryCode';
+const inquiryFormSchema = z.object({
   name: z
     .string()
     .min(2, { message: 'Name must be at least 2 characters long.' }),
-  email: z.email('Please enter a valid email address.'),
+  countryCode: z
+    .string()
+    .refine((code) => countryCodes.map((c) => c.code).includes(code), {
+      message: 'Invalid country code',
+    }),
   phoneNo: z
     .string()
     .min(10, { message: 'Please enter a valid phone number.' }),
-  restaurantName: z
+  queryType: z
     .string()
-    .min(2, { message: 'Restaurant name is required.' }),
-  restaurantCountry: z
-    .string()
-    .min(1, { message: 'Restaurant country is required.' }),
-  restaurantCity: z
-    .string()
-    .min(1, { message: 'Restaurant city is required.' }),
+    .min(10, { message: 'Message must be at least 10 characters long.' }),
   message: z
     .string()
     .min(10, { message: 'Message must be at least 10 characters long.' }),
@@ -37,16 +35,13 @@ export async function POST(request: NextRequest) {
       {
         message: 'Too many requests. Please try again later.',
       },
-      {
-        status: 429,
-      }
+      { status: 429 }
     );
   }
 
   try {
     const body = await request.json();
-    const validationResult = contactFormSchema.safeParse(body);
-
+    const validationResult = inquiryFormSchema.safeParse(body);
     if (!validationResult.success) {
       return NextResponse.json(
         {
@@ -64,7 +59,7 @@ export async function POST(request: NextRequest) {
 
     const recaptchaResult = await verifyRecaptcha(
       recaptchaToken,
-      'contact_form'
+      'inquiry_form'
     );
 
     if (!recaptchaResult.success) {
@@ -82,9 +77,7 @@ export async function POST(request: NextRequest) {
         }
       );
     }
-
-    await sendContactEmail(emailData);
-
+    await sendInquiryEmail(emailData);
     return NextResponse.json(
       {
         message: 'Thank you! Your message has been sent successfully.',
@@ -95,7 +88,7 @@ export async function POST(request: NextRequest) {
       }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('Inquiry form error:', error);
 
     if (error instanceof Error) {
       return NextResponse.json(

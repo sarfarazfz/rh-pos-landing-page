@@ -7,14 +7,16 @@ interface RecaptchaResponse {
   'error-codes'?: string[];
 }
 
+const ACTIONS = ['contact_form', 'inquiry_form'] as const;
 export async function verifyRecaptcha(
   token: string,
-  expectedAction: string = 'contact_form'
+  expectedAction: (typeof ACTIONS)[number]
 ): Promise<{
   success: boolean;
   score?: number;
   error?: string;
 }> {
+  console.log('action', expectedAction);
   const secretKey =
     process.env.NODE_ENV === 'development'
       ? process.env.RECAPTCHA_SECRET_KEY_DEVELOPMENT

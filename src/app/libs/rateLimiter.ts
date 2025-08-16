@@ -14,7 +14,7 @@ export function getClientIP(request: NextRequest): string {
 
 export function checkRateLimit(
   clientIP: string,
-  maxRequests: number = 5,
+  maxRequests: number = 10,
   windowMs: number = 60000 // 1 minute
 ): boolean {
   const now = Date.now();

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const outletTypes = [
-  "Quick Service (QSR)",
-  "Fine Dining",
-  "Cafes & Bakeries",
-  "Food Trucks",
-  "Bars & Pubs",
+  'Quick Service (QSR)',
+  'Fine Dining',
+  'Cafes & Bakeries',
+  'Food Trucks',
+  'Bars & Pubs',
 ];
 
 const OutletTypesSection = () => {
@@ -25,8 +25,7 @@ const OutletTypesSection = () => {
           {outletTypes.map((type) => (
             <div
               key={type}
-              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer"
-            >
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer">
               <p className="font-semibold text-slate-700">{type}</p>
             </div>
           ))}

@@ -64,8 +64,7 @@ const FeaturesSection = () => {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-slate-50 p-8 rounded-xl border border-transparent hover:border-teal-500 hover:shadow-lg transition-all duration-300"
-            >
+              className="bg-slate-50 p-8 rounded-xl border border-transparent hover:border-teal-500 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-teal-100 p-3 rounded-lg">
                   <feature.Icon className="w-6 h-6 text-teal-600" />

@@ -37,22 +37,17 @@ const WhyChooseUsSection = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
           {features.map((feature, index) => (
             <div key={index} className="text-center">
-              {/* Icon - Responsive sizing */}
               <div className="flex justify-center mb-6">
                 <div className="bg-teal-100 text-teal-600 rounded-full p-4">
-                  {/* Default size: w-8 h-8, Smaller on small screens: w-6 h-6 */}
                   <feature.Icon className="w-8 h-8 sm:w-6 sm:h-6" />
                 </div>
               </div>
-              {/* Title */}
               <h3 className="text-xl font-bold text-slate-800 mb-2">
                 {feature.title}
               </h3>
-              {/* Description */}
               <p className="text-slate-600 leading-relaxed">
                 {feature.description}
               </p>
