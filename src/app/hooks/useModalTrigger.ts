@@ -61,7 +61,7 @@ export const useModalTrigger = ({
       if (!isModalOpen && !sessionStorage.getItem(storageKey)) {
         openModal();
       }
-    }, 2000);
+    }, 60000);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
