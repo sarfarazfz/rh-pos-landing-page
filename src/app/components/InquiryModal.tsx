@@ -65,17 +65,11 @@ const InquiryModal: React.FC<InquiryModalProps> = ({
     type: 'idle',
   });
 
-  useEffect(() => {
-    const isSubmitted = sessionStorage.getItem('inquiryFormSubmitted');
-    if (isSubmitted || isContactModalOpen) return;
-
-    // Set timer for inquiry popup
-    const timer = setTimeout(() => {
-      onOpen();
-    }, 25000);
-
-    return () => clearTimeout(timer);
-  }, [isContactModalOpen, onOpen]);
+  useModalTrigger({
+    openModal: onOpen,
+    isModalOpen: isOpen || isContactModalOpen,
+    storageKey: 'inquiryFormSubmitted',
+  });
 
   useEffect(() => {
     if (isOpen) {
@@ -112,11 +106,7 @@ const InquiryModal: React.FC<InquiryModalProps> = ({
     formState: { isSubmitting },
   } = methods;
 
-  useModalTrigger({
-    openModal: onClose,
-    isModalOpen: isOpen,
-    storageKey: 'inquiryFormSubmitted',
-  });
+  // Modal trigger is handled at the top of the component
 
   const {
     executeRecaptcha,
